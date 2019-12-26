@@ -5,6 +5,7 @@ activateBtn();
 $('#contBtn').on('click', function() {
     $(this).removeClass('activeBtn');
     $('.intro_cont').hide(500);
+    $('.name').text("Hello 👋 " + $("#nameInput").val() + ", I am LokaBot. I can take you anywhere.");
     startChatBot();
 });
 
@@ -34,6 +35,7 @@ function activateBtn() {
         });
     });
 }
+
 
 $(function () {
     $('#messageBox').keyup(function () {

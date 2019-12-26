@@ -174,7 +174,7 @@ ul {
    overflow: hidden;
    transition: transform 0.1s ease-in;
 }
- 
+
 .input_grp input {
    position: relative;
    width: 100%;
@@ -185,11 +185,11 @@ ul {
    padding: 0 20px;
    padding-left: 45px;
 }
- 
+
 .focused_input {
    transform: scale(1.1);
 }
- 
+
 .input_icon {
    height: 100%;
    width: 45px;
@@ -199,7 +199,7 @@ ul {
    position: absolute;
    left: 0;
 }
- 
+
 .input_icon svg {
    fill: #22419A;
 }
@@ -318,7 +318,13 @@ ul {
    height: 100%;
    overflow-x: hidden;
    padding: 30px;
-   padding-top: 100px;
+   padding-top: 170px;
+   display: none;
+   visibility:
+}
+
+.beginChat .chat_box {
+  display: block;
 }
 
 .messages {
@@ -332,6 +338,7 @@ ul {
    position: relative;
    display: inline-block;
    font-size: 14px;
+   line-height: 1.4;
    border-radius: 20px;
    margin-bottom: 10px;
    box-shadow: 0 3px 4px 0 rgba(87,116,151,.1)
