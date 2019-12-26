@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap');
+/*** normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css ***/
+html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   -webkit-tap-highlight-color: rgb(220, 20, 60,0.6);
+   -webkit-text-size-adjust:none;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   outline: none;
+}
+
+/*** HTML5 Boilplate ***/
+
+hr {
+   display: block;
+   height: 1px;
+   border: 0;
+   border-top: 1px solid #ccc;
+   margin: 1em 0;
+   padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+   vertical-align: middle;
+}
+
+fieldset {
+   border: 0;
+   margin: 0;
+   padding: 0;
+}
+
+textarea {
+   resize: vertical;
+}
+
+/* Fix the thick text rendering on OSX */
+html,
+button {
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+   font-synthesis: antialiased;
+   font-family: 'Open Sans', sans-serif;
+}
+
+
+body {
+   position: relative;
+   display: block;
+   width: 100%;
+   height: auto;
+   background: #B9C3DF;
+   color: #000;
+   font-family: 'Open Sans', sans-serif;
+   overflow-x: hidden;
+}
+
+.open_menu {
+   position: fixed !important;
+}
+
+.open_menu:before {
+   content: '';
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 88;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.2);
+}
+
+a {
+   text-decoration: none;
+   cursor: pointer;
+   font-size: inherit;
+   color: inherit;
+}
+
+.cont_btn {
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: #22419A;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px 0 rgba(0,35,90,.08), 0 0 2px 0 rgba(0,35,90,.06);
+    cursor: pointer;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.cont_btn svg {
+    fill: #FFFFFF;
+}
+
+.activeBtn {
+   transform: translateY(0px);
+   opacity: 1;
+   visibility: visible;
+}
+
+img {
+   max-width: 100%;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+/*NOTE: App Container*/
+.app_cont {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   height: 100vh;
+   width: 420px;
+   display: block;
+   padding: 30px;
+   overflow-x: hidden;
+   background-color: #FBFBFB;
+   margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+   .app_cont {
+      width: 100%;
+   }
+}
+
+/* Welcome Page */
+
+.intro_cont {
+    position: relative;
+    display: block;
+    margin-top: 100px;
+}
+
+.intro_sm {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.intro_lg {
+    font-size: 24px;
+}
+
+.input_grp {
+   position: relative;
+   width: 100%;
+   height: 50px;
+   margin-top: 40px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 18px 0 rgba(0,35,90,.08), 0 0 2px 0 rgba(0,35,90,.06);
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   overflow: hidden;
+   transition: transform 0.1s ease-in;
+}
+ 
+.input_grp input {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   border: none;
+   background-color: transparent;
+   font-size: 15px;
+   padding: 0 20px;
+   padding-left: 45px;
+}
+ 
+.focused_input {
+   transform: scale(1.1);
+}
+ 
+.input_icon {
+   height: 100%;
+   width: 45px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   left: 0;
+}
+ 
+.input_icon svg {
+   fill: #22419A;
+}
+
+/* App Header */
+
+.app_header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 30px;
+   background-color: #FBFBFB;
+   z-index: 10;
+   visibility: hidden;
+   opacity: 0;
+   transition: transform 0.1s ease-in;
+}
+
+.app_logo {
+   position: relative;
+   display: flex;
+   align-items: center;
+   width: 100%;
+}
+
+.logo_img {
+   position: relative;
+   margin-right: 10px;
+   transform: translateX(20px);
+   transition: all 0.3s ease;
+}
+
+.logo_txt {
+   font-size: 15px;
+   transform: translateX(20px);
+   transition: all 0.3s ease;
+   transition-delay: 0.05s;
+}
+
+/*User Input Box */
+
+.chat_inputs {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 70px;
+   background-color: #FFFFFF;
+   display: flex;
+   align-items: center;
+   visibility: hidden;
+   opacity: 0;
+   transition: transform 0.1s ease-in;
+}
+
+.chat_inputs textarea {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   border: none;
+   background-color: transparent;
+   padding: 25px;
+   font-size: 15px;
+}
+
+.chat_icons {
+   position: absolute;
+   right: 25px;
+   display: flex;
+   align-items: center;
+}
+
+.c_icon {
+   width: 30px;
+   height: 30px;
+   background-color: #eeeeee;
+   border: none;
+   border-radius: 50%;
+   cursor: pointer;
+   pointer-events: none;
+   transition: background 0.1s ease;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.c_icon svg {
+   fill: #ccc;
+   transition: fill 0.1s ease;
+}
+
+.activeSend {
+   background-color: #22419A;
+   pointer-events: visible;
+}
+
+.activeSend svg {
+   fill: #FFFFFF;
+}
+
+.beginChat .chat_inputs, .beginChat .app_header {
+   visibility: visible;
+   opacity: 1;
+}
+
+.beginChat .app_header .logo_img, .beginChat .app_header .logo_txt {
+   transform: translateX(0px);
+}
+
+.chat_box {
+   position: absolute;
+   left: 0;
+   bottom: 70px;
+   width: 100%;
+   height: 100%;
+   overflow-x: hidden;
+   padding: 30px;
+   padding-top: 100px;
+}
+
+.messages {
+   display: block;
+   position: relative;
+   width: 100%;
+}
+
+.messages li {
+   padding: 15px;
+   position: relative;
+   display: inline-block;
+   font-size: 14px;
+   border-radius: 20px;
+   margin-bottom: 10px;
+   box-shadow: 0 3px 4px 0 rgba(87,116,151,.1)
+}
+
+.messages li.bot {
+   background-color: #22419A;
+   color: #FFFFFF;
+}
+
+.messages li.user {
+   float: right;
+   background-color: #FFFFFF;
+}
