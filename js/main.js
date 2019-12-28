@@ -2,10 +2,12 @@ activateBtn();
 
 //---- Start Chat Interface
 
+
+
 $('#contBtn').on('click', function() {
     $(this).removeClass('activeBtn');
     $('.intro_cont').hide(500);
-    $('.name').text("Hello 👋 " + $("#nameInput").val() + ", I am LokaBot. I can take you anywhere.");
+    firstMessage();
     startChatBot();
 });
 
@@ -21,6 +23,15 @@ function startSound() {
 
 function startChatBot() {
     $('body').addClass('beginChat');
+}
+
+function firstMessage() {
+    var name = $.trim($("#nameInput").val());
+
+    $('.messages').append('<li class="bot"> Hello 👋 ' + name + '. Welcome to Church of Christ, ijeshatedo, Surulere Lagos 😊.</li>').delay(1000).queue(function (next) {
+        $(this).append('<li class="bot">Should we get started?</li> <br />');
+        next();
+    });
 }
 
 function activateBtn() {
@@ -44,5 +55,15 @@ $(function () {
         } else {
             $('#sendBtn').addClass('activeSend');
         }
+    });
+});
+
+
+$(document).ready(function () {
+    var chat_screen = $(".messages");
+    var text_bar = $("#messageBox")
+    $('#sendBtn').click(function () {
+        chat_screen.append('<li class="user">' + text_bar.val() + '</li>');
+        text_bar.val('');
     });
 });

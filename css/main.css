@@ -337,19 +337,32 @@ ul {
    padding: 15px;
    position: relative;
    display: inline-block;
-   font-size: 14px;
+   font-size: 13px;
    line-height: 1.4;
    border-radius: 20px;
    margin-bottom: 10px;
-   box-shadow: 0 3px 4px 0 rgba(87,116,151,.1)
+   box-shadow: 0 3px 4px 0 rgba(87,116,151,.1);
+}
+
+@keyframes moveInBot {
+  0% {transform: translateX(-40px)}
+  100% {transform: translateX(0);}
+}
+
+@keyframes moveInUser {
+  0% {transform: translateX(40px)}
+  100% {transform: translateX(0);}
 }
 
 .messages li.bot {
    background-color: #22419A;
    color: #FFFFFF;
+   animation: moveInBot 0.2s ease 1;
 }
 
 .messages li.user {
    float: right;
+   clear: both;
    background-color: #FFFFFF;
+   animation: moveInUser 0.2s ease 1;
 }
